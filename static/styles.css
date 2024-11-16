@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #fecdcd;
+    color: #463939;
+    border-radius: 15px 15px 0 0;
+    padding: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.restaurant-list {
+    padding: 20px;
+}
+
+.restaurant-list__filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.restaurant-list__filter {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.restaurant-list__filter--active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.restaurant-list__grid {
+    display: grid;
+    gap: 20px;
+}
+
+.restaurant-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.restaurant-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-card__image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.restaurant-card__status {
+    font-size: 0.85em;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin-top: -20px;
+    position: absolute;
+    border-radius: 15px;
+    color: #fff;
+}
+
+.restaurant-card__status--open {
+    background-color: green;
+}
+
+.restaurant-card__status--closed {
+    background-color: red;
+}
+
+.restaurant-card__info {
+    padding: 15px;
+}
+
+.restaurant-card__name {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.restaurant-card__location {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.restaurant-card__button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive Grid Layout */
+@media (min-width: 768px) {
+    .restaurant-list__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .restaurant-list__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .restaurant-list__grid {
+        grid-template-columns: 1fr;
+    }
+}
+

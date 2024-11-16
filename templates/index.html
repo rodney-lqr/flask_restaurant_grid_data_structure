@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Flask Grid Restaurant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <section class="restaurant-list">
+        <h1>List of 50 Different Restaurants in the Philippines and the World </h1>
+        <div class="restaurant-list__grid">
+             {% for restaurant in restaurants %}
+            <div class="restaurant-card">
+                <div class="restaurant-card__image">
+                    <img src="{{ restaurant.image_url }}" alt="Restaurant Image 1">
+                </div>
+                <div class="restaurant-card__status {{ 'restaurant-card__status--open' if restaurant.status == 'Open' else 'restaurant-card__status--closed' }} ">{{restaurant.status}}</div>
+                <div class="restaurant-card__info">
+                    <h3 class="restaurant-card__name">{{restaurant.restaurant_name}}</h3>
+                    <p class="restaurant-card__location">{{restaurant.location}}</p>
+                    <button class="restaurant-card__button">View</button>
+                </div>
+            </div>
+             {% endfor %}
+        </div>
+    </section>
+</body>
+</html>
